@@ -34,6 +34,12 @@ template <typename T, typename U>
 concept arithmetic_convertible = arithmetic<T> && arithmetic<U> && std::is_convertible_v<T, U>;
 
 /**
+ * @brief Concept for integral types.
+ */
+template <typename T>
+concept integral = std::integral<T>;
+
+/**
  * @brief Concept for floating-point types.
  */
 template <typename T>
