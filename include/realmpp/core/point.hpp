@@ -167,4 +167,13 @@ template <traits::arithmetic T>
     return pos * scalar;
 }
 
+namespace traits
+{
+/**
+ * @brief Concept for callback functions that can be invoked with a point<T>.
+ */
+template <typename Func, typename T>
+concept point_callback = std::invocable<Func, point<T>>;
+}  // namespace traits
+
 }  // namespace realmpp

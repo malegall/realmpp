@@ -26,6 +26,7 @@ FetchContent_MakeAvailable(googletest)
 # --- Test Executable ---
 add_executable(
   run_tests
+  tests/algo/bresenham_test.cpp
   tests/core/bounding_box_test.cpp
   tests/core/grid_test.cpp
   tests/core/point_test.cpp
