@@ -70,4 +70,11 @@ concept resizable = std::movable<Container> &&
                         c.assign(n, v);
                         c = Container(n, v);
                     };
+
+/**
+ * @brief Concept for callback functions that can be invoked with an argument of type Arg.
+ */
+template <typename Func, typename Arg>
+concept consumer = std::invocable<Func, Arg>;
+
 }  // namespace realmpp::traits

@@ -29,7 +29,7 @@ namespace realmpp::bresenham
  * @brief Computes a line between two points using Bresenham's algorithm.
  * @tparam T The integral type for coordinates (defaults to int).
  */
-template <traits::integral T = int, traits::point_callback<T> Func>
+template <traits::integral T = int, traits::consumer<point<T>> Func>
 constexpr void draw_line(point<T> start, point<T> end, Func&& callback)
 {
     auto constexpr_abs = [](T v) constexpr -> T { return v < 0 ? -v : v; };
