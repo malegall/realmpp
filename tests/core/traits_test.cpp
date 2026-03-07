@@ -68,3 +68,13 @@ TEST(traits_test, resizable_concept)
         !realmpp::traits::resizable<std::array<int, 10>>,
         "[resizable_concept] std::array<int, 10> should not satisfy the resizable concept");
 }
+
+TEST(traits_test, consumer_concept)
+{
+    auto lambda = [](int) {};
+    static_assert(realmpp::traits::consumer<decltype(lambda), int>,
+                  "[consumer_concept] lambda should satisfy the consumer concept for int");
+    static_assert(
+        !realmpp::traits::consumer<decltype(lambda), std::string>,
+        "[consumer_concept] lambda should not satisfy the consumer concept for std::string");
+}
