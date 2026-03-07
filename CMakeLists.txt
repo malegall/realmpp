@@ -26,6 +26,11 @@ FetchContent_MakeAvailable(googletest)
 # --- Test Executable ---
 add_executable(
   run_tests
+  tests/core/bounding_box_test.cpp
+  tests/core/grid_test.cpp
+  tests/core/point_test.cpp
+  tests/core/rng_engine_test.cpp
+  tests/core/traits_test.cpp
 )
 
 set_target_properties(run_tests PROPERTIES
